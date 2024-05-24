@@ -15,5 +15,5 @@ jobs:
       - name: Login 
         id: docker-hub
         run: |
-            docker login --username ${{secrets.DOCKERHUB_USERNAME}} --password ${{secrets.DOCKERHUB_PASSWORD}}
+            docker login --username ${{secrets.DOCKERHUB_USERNAME}} --password-stdin ${{secrets.DOCKERHUB_PASSWORD}}
       
