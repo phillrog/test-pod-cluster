@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
  
 jobs:
-  login:
+  deply-docker-registry:
     runs-on: ubuntu-latest
     steps:
       - name: check repository
