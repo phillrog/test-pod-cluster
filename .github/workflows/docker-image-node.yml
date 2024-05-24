@@ -11,9 +11,8 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        run: |
-            docker login -u ${{ env.USERNAME }} -p ${{ env.PASSWORD }}
+      - uses: actions/checkout@v2
+      -  name: Checkout repository
+         run: docker login -u ${{ env.USERNAME }} -p ${{ env.PASSWORD }}
 
        
