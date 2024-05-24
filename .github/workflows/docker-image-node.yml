@@ -1,9 +1,7 @@
-name: Teste Dploy Imagem Docker
+name: Teste Deploy Imagem Docker
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
     branches: [ "main" ]
 
 jobs:
@@ -13,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Login 
-      id: docker-hub
-      env:
+      - uses: actions/checkout@v4
+      - name: Login 
+        id: docker-hub
+        env:
             username: ${{secrets.DOCKERHUB_USERNAME}}
             password: ${{secrets.DOCKERHUB_PASSWORD}}
-      run: |
+        run: |
             docker login -u $username -p $password 
       
