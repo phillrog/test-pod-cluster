@@ -3,16 +3,13 @@ name: Teste Deploy Imagem Docker
 on:
   push:
     branches: [ "main" ]
-env:
-  USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-  PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-  
+ 
 jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      -  name: Checkout repository
-         run: docker login -u ${{ env.USERNAME }} -p ${{ env.PASSWORD }}
+      - uses: actions/checkout@v1
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
        
