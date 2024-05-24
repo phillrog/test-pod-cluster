@@ -20,7 +20,7 @@ jobs:
       - name: build e push docker image para o registry
         uses: docker/build-push-action@v5
         with:
-          context: .\node
+          context: ./node
           push: true
           tags: ${{secrets.DOCKERHUB_USERNAME}}/teste-node:latest
  
