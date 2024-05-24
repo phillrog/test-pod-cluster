@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-teste
+spec:
+  containers:
+  - name: node-teste-container
+    image: phillrog/teste-node
+  imagePullSecrets:
+  - name: regcred
