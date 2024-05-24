@@ -14,9 +14,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Login 
         id: docker-hub
-        env:
-            username: ${{secrets.DOCKERHUB_USERNAME}}
-            password: ${{secrets.DOCKERHUB_PASSWORD}}
         run: |
-            docker login --username $username --password $password 
+            docker login --username ${{secrets.DOCKERHUB_USERNAME}} --password ${{secrets.DOCKERHUB_PASSWORD}}
       
