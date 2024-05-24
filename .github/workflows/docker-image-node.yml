@@ -11,10 +11,17 @@ jobs:
       - name: check repository
         uses: actions/checkout@v4
 
-      - name: login to docker registry
+      - name: login no docker registry
         uses: docker/login-action@v3
         with:
           username: ${{secrets.DOCKERHUB_USERNAME}}
           password: ${{secrets.DOCKERHUB_PASSWORD}}
+
+      - name: build e push docker image para o registry
+        uses: docker/build-push-action@v5
+        with:
+          context: .\node
+          push: true
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/teste-node:latest
  
        
