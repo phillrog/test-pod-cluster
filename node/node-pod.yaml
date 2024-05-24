@@ -6,5 +6,6 @@ spec:
   containers:
   - name: node-teste-container
     image: phillrog/teste-node:latest
+    imagePullPolicy: Always
   imagePullSecrets:
-  - name: regcred
+  - name: docker-cfg
